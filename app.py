@@ -1,13 +1,9 @@
 import streamlit as st
-import streamlit.components.v1 as components
 import pandas as pd
-import altair as alt
 import matplotlib.pyplot as plt 
 import seaborn as sns
 from PIL import Image
-import plotly.figure_factory as ff
 import io
-
 
 with st.sidebar:
     st.header('Springboard - Capstone Project')
