@@ -18,7 +18,6 @@ with st.sidebar:
     st.write("Created and implemented by Joy Opsvig")
 
 image = Image.open('src/headerimage2.jpg')
-
 st.image(image)
 st.caption('Photo from Unsplash')
 
@@ -110,10 +109,8 @@ It appears there are no missing values for any of the features and the data type
     Let’s check on the distribution of each of the features.
 ''')
 
-st.set_option('deprecation.showPyplotGlobalUse', False)
-
-df.hist(figsize=(8,7))
-st.pyplot()
+image2 = Image.open('src/featuredistribution.png')
+st.image(image2)
 
 st.markdown('''
 The features 'mean_area' and 'mean_perimeter' slightly skew left, and the rest of features nearly 
@@ -131,16 +128,8 @@ For my exploratory data analysis, I will aim to understand the relationship betw
 Let's take a look at the boxplots comparing each of the features for a benign diagnosis (0) vs a malignant diagnosis (1).
 ''')
 
-fig_dims = (20, 20)
-fig, ax = plt.subplots(3,2, figsize=fig_dims)
-sns.boxplot(data=df, x='diagnosis', y='mean_radius', ax=ax[0,0], palette="Blues")
-sns.boxplot(data=df, x='diagnosis', y='mean_texture', ax=ax[0,1], palette="Blues")
-sns.boxplot(data=df, x='diagnosis', y='mean_perimeter', ax=ax[1,0], palette="Blues")
-sns.boxplot(data=df, x='diagnosis', y='mean_area', ax=ax[1,1], palette="Blues")
-sns.boxplot(data=df, x='diagnosis', y='mean_smoothness', ax=ax[2,0], palette="Blues")
-sns.countplot(data=df, x='diagnosis', ax=ax[2,1], palette="Blues")
-sns.color_palette("ch:start=.2,rot=-.3", as_cmap=True)
-st.pyplot()
+image3 = Image.open('src/boxplotsdiagnosis.png')
+st.image(image3)
 
 st.markdown('''
 Reviewing the above charts, it appears benign tumors tend to have higher measurements 
@@ -159,8 +148,8 @@ I would also like to understand how the features relate to each other,
 
 ''')
 
-g = sns.pairplot(df, hue="diagnosis", palette='Blues')
-st.pyplot()
+image4 = Image.open('src/pairplots.png')
+st.image(image4)
 
 st.markdown('''
 The pair plots give a useful overview of how benign and malignant tumor measurements compare across all features.
@@ -169,9 +158,8 @@ I will now investigate any correlations between the features in the below heatma
 
 ''')
 
-plt.figure(figsize=(20,7))
-sns.heatmap(df.corr(), annot=True, cmap="YlGnBu");
-st.pyplot()
+image5 = Image.open('src/heatmap.png')
+st.image(image5)
 
 st.markdown('''
 As expected, 'mean_area', 'mean_radius', and 'mean_perimeter' are closely correlated with one another.
