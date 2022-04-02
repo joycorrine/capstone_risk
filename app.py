@@ -117,7 +117,6 @@ It appears there are no missing values for any of the features and the data type
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 df.hist(figsize=(8,7))
-plt.show()
 st.pyplot()
 
 st.markdown('''
@@ -145,7 +144,6 @@ sns.boxplot(data=df, x='diagnosis', y='mean_area', ax=ax[1,1], palette="Blues")
 sns.boxplot(data=df, x='diagnosis', y='mean_smoothness', ax=ax[2,0], palette="Blues")
 sns.countplot(data=df, x='diagnosis', ax=ax[2,1], palette="Blues")
 sns.color_palette("ch:start=.2,rot=-.3", as_cmap=True)
-plt.show()
 st.pyplot()
 
 st.markdown('''
@@ -166,7 +164,6 @@ I would also like to understand how the features relate to each other,
 ''')
 
 g = sns.pairplot(df, hue="diagnosis", palette='Blues')
-plt.show()
 st.pyplot()
 
 st.markdown('''
@@ -178,7 +175,6 @@ I will now investigate any correlations between the features in the below heatma
 
 plt.figure(figsize=(20,7))
 sns.heatmap(df.corr(), annot=True, cmap="YlGnBu");
-plt.show()
 st.pyplot()
 
 st.markdown('''
